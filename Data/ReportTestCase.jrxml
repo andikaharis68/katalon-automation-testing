@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.2.final using JasperReports Library version 6.21.2-8434a0bd7c3bbc37cbf916f2968d35e4b165821a  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Report" language="groovy" pageWidth="595" pageHeight="842" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="40" bottomMargin="40" uuid="ec5a9c2d-ed08-46c1-b7e6-80fea7ead8f3">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#EEEFF0"/>
+		</conditionalStyle>
+	</style>
+	<style name="Table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<leftPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+			<rightPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#CACED0">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#D8D8D8"/>
+		</conditionalStyle>
+	</style>
+	<style name="Table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Style1" forecolor="#05A62D" hTextAlign="Center" hImageAlign="Center" vImageAlign="Middle" fontSize="10">
+		<box leftPadding="20"/>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{status} == "Failed"]]></conditionExpression>
+			<style forecolor="#FA0A12" fontName="SansSerif" fontSize="10"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="tableDataset" uuid="bbf520ae-c33b-4c93-bf60-9fad5405e4ac">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="id" class="java.lang.String"/>
+		<field name="testCase" class="java.lang.String"/>
+		<field name="status" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="scenarioName" class="java.lang.String"/>
+	<parameter name="detailPlatformName" class="java.lang.String"/>
+	<parameter name="detailPlatformVersion" class="java.lang.String"/>
+	<parameter name="detailExecutionStart" class="java.lang.String"/>
+	<parameter name="detailExecutionTime" class="java.lang.String"/>
+	<parameter name="detailExecutionEnd" class="java.lang.String"/>
+	<parameter name="detailApplicationId" class="java.lang.String"/>
+	<parameter name="detailApplicationVersion" class="java.lang.String"/>
+	<parameter name="detailHostName" class="java.lang.String"/>
+	<parameter name="barcodeValue" class="java.lang.String"/>
+	<parameter name="dataSources" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="id" class="java.lang.String"/>
+	<field name="testCase" class="java.lang.String"/>
+	<field name="status" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="73" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="58" width="513" height="1" uuid="67a67377-0b5f-4eb3-8f81-7936e5713ff9">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<image hAlign="Center">
+				<reportElement x="0" y="3" width="110" height="34" uuid="35c6d481-e776-49b9-9e7f-6368e3df3c99"/>
+				<imageExpression><![CDATA["./Data/mandiri_logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="134" y="0" width="246" height="24" uuid="50f044ce-f0f0-415c-a884-6df1d7e34962">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PT Bank Mandiri (Persero) Tbk.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="134" y="22" width="238" height="15" uuid="ed661a44-ec0e-408d-9ca7-e1178546ce17"/>
+				<text><![CDATA[Dept. Release Management & Testing Services]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="134" y="37" width="238" height="15" uuid="fb7d31ea-fced-4869-83ff-cb61d53a71db"/>
+				<text><![CDATA[Katalon Report Testing]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="387" y="5" width="38" height="19" uuid="b1334d56-398c-4ea4-af6c-9922354d659d"/>
+				<box rightPadding="4"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="426" y="5" width="98" height="19" uuid="103fab1b-c1ab-4dfc-92e4-e6e7650e9cf5"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="341" splitType="Stretch">
+			<componentElement>
+				<reportElement x="0" y="123" width="513" height="200" uuid="42cafc57-b798-49f9-a7d7-f3d387d1117d">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table 1_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table 1_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table 1_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="tableDataset" uuid="5ab06ffc-596a-4e54-b1cd-8e444cc08025">
+						<dataSourceExpression><![CDATA[$P{dataSources}]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="40" uuid="4a494cdc-ca44-46c6-8e8c-bd98b3478ca0">
+						<jr:columnHeader style="Table 1_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" uuid="0a5b7233-5a37-4aa5-829f-884f37d46a58"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="10" isBold="true"/>
+								</textElement>
+								<text><![CDATA[No]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 1_CH" height="30"/>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="40" height="30" uuid="3579c360-fc7f-41f0-a3fc-c097bb014459"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="380" uuid="a2b645bc-f811-4d50-97bb-f5d70a903867">
+						<jr:columnHeader style="Table 1_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="380" height="30" uuid="eb480e47-1a52-4b3b-9962-9020add698ee"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="10" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Test Case]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 1_CH" height="30"/>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="380" height="30" uuid="4b308863-1e16-47a2-bba2-80bfe4813a84"/>
+								<textElement textAlignment="Left" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{testCase}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="93" uuid="2ddd49e0-6eb7-47ee-931b-0fd0f2b00b43">
+						<jr:columnHeader style="Table 1_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="93" height="30" uuid="34794ee9-b247-4979-b2be-0b9202b8aa45"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="10" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Status]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table 1_CH" height="30"/>
+						<jr:detailCell style="Table 1_TD" height="30">
+							<textField>
+								<reportElement style="Style1" x="0" y="0" width="93" height="30" uuid="f9f7b705-d9c6-43d9-996f-2b6191511806">
+									<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+									<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+									<propertyExpression name="net.sf.jasperreports.style.forecolor"><![CDATA[]]></propertyExpression>
+								</reportElement>
+								<textElement textAlignment="Left" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement x="1" y="9" width="89" height="25" uuid="eb514830-7838-402f-a323-ed4a8ff09b6f">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Scenario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="37" width="89" height="15" uuid="4e643999-e559-49e1-ae8c-20faeaf185b5"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Platform Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="52" width="89" height="15" uuid="e117b9f9-03af-470a-a203-bee78c383700"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Platform Version]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="67" width="89" height="15" uuid="491e7342-4910-44e7-abd7-71198ced8651"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Execution Start]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="82" width="89" height="15" uuid="c0e155d5-273e-42e9-b701-6d565990a591"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Execution End]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="96" y="37" width="6" height="14" uuid="3be2ef72-cfcf-4e97-bebf-99fbe62c3525"/>
+				<textElement>
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="96" y="52" width="6" height="14" uuid="2a290dde-a97b-4954-a901-728b70fcf8a6"/>
+				<textElement>
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="96" y="67" width="6" height="14" uuid="99d0ae83-2a01-4f9d-8e11-deb11a3be066"/>
+				<textElement>
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="96" y="82" width="6" height="14" uuid="58cc50cf-9b7a-4700-8e2d-556c1c0305d7"/>
+				<textElement>
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="96" y="14" width="6" height="14" uuid="61e689b7-9062-48c2-b8e4-01493cef2a9b"/>
+				<textElement>
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField textAdjust="ScaleFont">
+				<reportElement x="105" y="9" width="409" height="24" forecolor="#A80816" uuid="03c47b5c-9c4e-428f-aff6-3a320053e27f"/>
+				<textElement>
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{scenarioName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="105" y="37" width="156" height="15" uuid="ed01a9cd-7e3f-4884-973e-8de085d8d98e">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{detailPlatformName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="105" y="52" width="156" height="15" uuid="23f962ae-9bd3-4a52-b4ef-d7fb19578afe">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{detailPlatformVersion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="105" y="67" width="156" height="15" uuid="bb1e7815-c94f-4a70-8036-4deb4567e8b5">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{detailExecutionStart}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="105" y="82" width="156" height="15" uuid="4ae59314-7d51-4c90-ad77-9df8bd93df93">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{detailExecutionEnd}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="271" y="37" width="89" height="15" uuid="68a9f36f-013d-41d4-bf5d-674483009403"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Aplication ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="271" y="52" width="89" height="15" uuid="257d8380-870b-4674-a6ea-17026a994fad"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[App Version]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="271" y="67" width="89" height="15" uuid="4356517f-41dc-4ff3-934a-46a8a79af20c"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Host Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="271" y="82" width="89" height="15" uuid="399597d6-64e3-485f-8047-af57a58ac12a"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Execution Time]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="366" y="37" width="6" height="14" uuid="6933fcd2-ef6e-489c-aefb-6e4b59e3f032"/>
+				<textElement>
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="366" y="52" width="6" height="14" uuid="9d38c280-96bf-4c1f-b59c-7dd96c98e116"/>
+				<textElement>
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="366" y="67" width="6" height="14" uuid="8117730b-f696-49bc-8c0c-6fc6121192f3"/>
+				<textElement>
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="366" y="82" width="6" height="14" uuid="85ea1013-7df3-499e-a092-8c47ab82c938"/>
+				<textElement>
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="375" y="37" width="139" height="15" uuid="19d66770-49b8-4dbe-bf52-236426f724c7">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{detailApplicationId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="375" y="52" width="139" height="15" uuid="cc4a62ee-025e-4223-ae84-f6c6293045e5">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{detailApplicationVersion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="375" y="67" width="139" height="15" uuid="64491ea9-e3e9-4744-b693-98c287903fe8">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{detailHostName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="375" y="82" width="139" height="15" uuid="fd18857d-4772-4396-8874-7495f565ed4d">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{detailExecutionTime}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="0" y="5" width="480" height="30" backcolor="#E6E8E9" uuid="bc5cde81-a0d9-469b-99d2-07513da79d56"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="9" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[BANK MANDIRI KATALON REPORT ]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="484" y="5" width="31" height="30" forecolor="#000608" backcolor="#E6E8E9" uuid="9912e7eb-5b41-4d7b-9bdf-79b8053a0740"/>
+				<box>
+					<pen lineStyle="Dotted"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

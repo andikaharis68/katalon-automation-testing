@@ -19,13 +19,15 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 
-WebUI.click(findTestObject('Page_CuraHomepage/btn_MakeAppointment'))
 
-WebUI.setText(findTestObject('Page_Login/txt_UserName'), Username)
+//Mobile.startExistingApplication("com.instagram.android")
+//
+//Mobile.delay(5)
+//
+//home.tapButtonSetting()
+//
+//Mobile.delay(5)
+//
+//Mobile.closeApplication()
 
-WebUI.setText(findTestObject('Page_Login/txt_Password'), Password)
-
-WebUI.click(findTestObject('Page_Login/btn_Login'))
-
-landingPage = WebUI.verifyElementPresent(findTestObject('Page_CuraAppointment/div_Appointment'), GlobalVariable.G_Timeout)
 

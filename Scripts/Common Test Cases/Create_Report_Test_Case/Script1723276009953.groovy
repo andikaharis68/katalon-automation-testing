@@ -4,8 +4,7 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
-import com.andika.Home
-import com.helper.Helper
+import com.company.services.CustomReport
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -20,17 +19,8 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-Home home = new Home()
-Helper helper = new Helper()
+CustomReport customReport = new CustomReport()
 
-helper.report()
+customReport.createReportTestCase()
 
-//Mobile.startExistingApplication("com.instagram.android")
-//
-//Mobile.delay(5)
-//
-//home.tapButtonSetting()
-//
-//Mobile.delay(5)
-//
-//Mobile.closeApplication()
+customReport.createReportEvidenceImage()

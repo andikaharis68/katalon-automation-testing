@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>Open Instagram</name>
+   <name>Create_Report_Evidence_Image</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>e23ff943-dbf4-4058-803a-94827312703e</testCaseGuid>
+   <testCaseGuid>a121db68-f479-4c75-8d45-621066d84c5e</testCaseGuid>
 </TestCaseEntity>

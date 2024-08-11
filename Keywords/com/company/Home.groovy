@@ -1,10 +1,10 @@
-package com.andika
+package com.company
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
-import com.helper.PageObject
+import com.company.pageobject.PageObject
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory
@@ -47,7 +47,7 @@ public class Home extends PageObject {
 	Home() {
 		btnSetting = createObjectById("btnSetting", "")
 	}
-	
+
 	public void tapButtonSetting() {
 		Mobile.tap(btnSetting, 0)
 	}
