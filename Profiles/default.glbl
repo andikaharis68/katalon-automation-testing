@@ -6,17 +6,22 @@
    <defaultProfile>true</defaultProfile>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>10</initValue>
-      <name>G_Timeout</name>
+      <initValue>'www.facebook.com'</initValue>
+      <name>Web_Url</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'http://demoaut.katalon.com'</initValue>
-      <name>G_SiteURL</name>
+      <initValue>''</initValue>
+      <name>Path_Test_Report</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>5</initValue>
-      <name>G_ShortTimeOut</name>
+      <initValue>''</initValue>
+      <name>Current_Test_Case</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>Current_Test_Suites</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

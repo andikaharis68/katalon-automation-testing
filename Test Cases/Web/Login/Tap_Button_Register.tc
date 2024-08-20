@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Tap button register</description>
+   <name>Tap_Button_Register</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>dc59940a-fb78-4da3-82c6-7ff4bffcfd97</testCaseGuid>
+</TestCaseEntity>
