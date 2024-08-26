@@ -43,6 +43,6 @@ public class LoginScreen extends PageObject {
 	}
 	
 	public void takeReportClickButtonLogin() {
-		WebService.takeReportScreenshot(btnRegis, "Tap Button Register")
+		WebService.takeReportScreenshot(btnRegis)
 	}
 }

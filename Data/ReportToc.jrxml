@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.2.final using JasperReports Library version 6.21.2-8434a0bd7c3bbc37cbf916f2968d35e4b165821a  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="40" bottomMargin="40" uuid="618519b4-55f6-42ec-8f57-b8164ac326e7">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<subDataset name="tableDataset" uuid="2812e183-9500-4880-8c4a-b0dcc03e326d">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="idx" class="java.lang.String"/>
+		<field name="item" class="java.lang.String"/>
+		<field name="page" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="dataSource" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="coverTesterName" class="java.lang.String"/>
+	<parameter name="coverFeatureName" class="java.lang.String"/>
+	<parameter name="coverProjectName" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="idx" class="java.lang.String"/>
+	<field name="item" class="java.lang.String"/>
+	<field name="page" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="713" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="1" width="515" height="10" forecolor="#329AC7" backcolor="#329AC7" uuid="f296f764-d951-49d0-891d-695ab0fabcb0"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="30" width="199" height="30" forecolor="#626769" uuid="af816c50-006b-429c-9199-7f765eb3b704">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Table of Content]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="62" width="199" height="1" forecolor="#329AC7" uuid="f251d3e0-cae0-40bd-a573-5d0109a178ed">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<componentElement>
+				<reportElement x="0" y="94" width="516" height="30" uuid="bd800faf-bbb7-4e5a-b982-0be5cc4a2534">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="tableDataset" uuid="4bc298ec-d371-4a29-b76e-d350e1dcf7ae">
+						<dataSourceExpression><![CDATA[$P{dataSource}]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="30" width="516">
+						<textField>
+							<reportElement x="0" y="0" width="33" height="20" uuid="38857266-a5dc-4035-a2ec-960c709f5213"/>
+							<textElement textAlignment="Right" verticalAlignment="Middle">
+								<font size="14"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{idx}+"."]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="33" y="0" width="449" height="20" uuid="a83b1b90-ea3e-4280-aab1-086e94b56ed4"/>
+							<textElement textAlignment="Left" verticalAlignment="Middle">
+								<font size="14"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{item}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="482" y="0" width="33" height="20" uuid="e41461da-8b9c-4ef4-b621-5f7e87cbbab9"/>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font size="14"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{page}]]></textFieldExpression>
+						</textField>
+						<line>
+							<reportElement x="20" y="23" width="491" height="1" uuid="db2b1855-2393-4094-9ebe-3c36266ce755"/>
+							<graphicElement>
+								<pen lineColor="#4D4D4D"/>
+							</graphicElement>
+						</line>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="49">
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="0" y="11" width="480" height="30" backcolor="#E6E8E9" uuid="8255faad-683c-4272-aac7-acdf06f70c66"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="9" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[KATALON TESTING REPORT - PT. BANK MANDIRI (PERSERO) TBK.]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="484" y="11" width="31" height="30" forecolor="#000608" backcolor="#E6E8E9" uuid="0e2ec829-d83f-4bbc-b69d-a1cc4a124e3f"/>
+				<box>
+					<pen lineStyle="Dotted"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER} + 1]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

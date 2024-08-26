@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
-   <description></description>
+   <description>Melakukan pengisian data sesuai dengan data test dan memastikan semua field dapat terisi,&#xd;
+kemudia klik tombol register untuk melanjutkan proses registrasi.</description>
    <name>Submit_Register_New_Account</name>
    <tag></tag>
    <comment></comment>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Klik button close pada popup untuk membatalkan registrasi dan kembali ke halaman login</description>
+   <name>Cancel_Register_New_Account</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>83fbaa81-7aa5-4f10-9f5e-7b0c602f11df</testCaseGuid>
+</TestCaseEntity>

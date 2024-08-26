@@ -6,6 +6,11 @@
    <defaultProfile>true</defaultProfile>
    <GlobalVariableEntity>
       <description></description>
+      <initValue>'Andika Haris'</initValue>
+      <name>Tester_Name</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
       <initValue>'www.facebook.com'</initValue>
       <name>Web_Url</name>
    </GlobalVariableEntity>
@@ -22,6 +27,21 @@
    <GlobalVariableEntity>
       <description></description>
       <initValue>''</initValue>
+      <name>Current_Test_Case_Desc</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
       <name>Current_Test_Suites</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>[:]</initValue>
+      <name>Evidence_Image</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://kb-fmf.atlassian.net/browse/LDL-1161'</initValue>
+      <name>Web_Url_Gmail</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

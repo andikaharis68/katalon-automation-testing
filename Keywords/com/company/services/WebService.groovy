@@ -16,6 +16,7 @@ import java.text.SimpleDateFormat
 
 import javax.imageio.ImageIO
 
+import org.bouncycastle.jcajce.provider.asymmetric.util.KeyUtil
 import org.openqa.selenium.OutputType
 import org.openqa.selenium.TakesScreenshot
 import org.openqa.selenium.WebDriver
@@ -43,15 +44,19 @@ import internal.GlobalVariable
 public class WebService {
 
 	def static void getDataBeforeTestCase(TestCaseContext testCaseContext) {
-		GlobalVariable.Current_Test_Case = testCaseContext.getTestCaseId()
-		KeywordUtil.logInfo(GlobalVariable.Current_Test_Case)
+		String pathTC = testCaseContext.getTestCaseId()
+		TestCase testCaseName = findTestCase(pathTC)
+		GlobalVariable.Current_Test_Case = testCaseName.getName().replace("_", " ")
+		GlobalVariable.Current_Test_Case_Desc = testCaseName.getDescription()
+		KeywordUtil.logInfo(GlobalVariable.Current_Test_Case_Desc)
 	}
-	
+
 	def static void getDataBeforeTestSuites(TestSuiteContext testSuiteContext) {
+		KeywordUtil.logInfo(testSuiteContext.getTestSuiteId())
 		GlobalVariable.Current_Test_Suites = testSuiteContext.getTestSuiteId().split("/")[1]
 		GlobalVariable.Path_Test_Report = RunConfiguration.getReportFolder()
 	}
-	
+
 	@Keyword
 	def static void openBrowser(String url) {
 		WebUI.openBrowser("")
@@ -59,7 +64,7 @@ public class WebService {
 		WebUI.navigateToUrl(url)
 	}
 
-	def static void takeReportScreenshot(TestObject to, String fileName) {
+	def static void takeReportScreenshot(TestObject to) {
 		String destPath = "${GlobalVariable.Path_Test_Report}/Screenshoots"
 		Files.createDirectories(Paths.get(destPath))
 		WebDriver driver = DriverFactory.getWebDriver()
@@ -73,18 +78,17 @@ public class WebService {
 		WebElement element = WebUI.findWebElement(to, 0)
 		int elementWidth = element.getSize().getWidth()
 		int elementHeight = element.getSize().getHeight()
-		int elementX = element.getLocation().getX()
-		int elementY = element.getLocation().getY()
+		int elementX = WebUI.executeJavaScript('return arguments[0].getBoundingClientRect().left;', Arrays.asList(element))
+		int elementY = WebUI.executeJavaScript('return arguments[0].getBoundingClientRect().top;', Arrays.asList(element))
 		graphics.drawRect(elementX, elementY, elementWidth, elementHeight)
 		graphics.dispose()
 
 		// Save the screenshot with the highlighted element
-		Date date =  new Date()
-		long epochTime = date.getTime()
-		ImageIO.write(fullImg, "png", new File("${destPath}/${epochTime}_${fileName}.png"))
+		ImageIO.write(fullImg, "png", new File("${destPath}/${GlobalVariable.Current_Test_Case}.png"))
+		GlobalVariable.Evidence_Image[GlobalVariable.Current_Test_Case] = GlobalVariable.Current_Test_Case_Desc
 	}
 
-	def static void takeReportScreenshot(List<TestObject> tos, String fileName) {
+	def static void takeReportScreenshot(List<TestObject> listTo) {
 		String destPath = "${GlobalVariable.Path_Test_Report}/Screenshoots"
 		Files.createDirectories(Paths.get(destPath))
 		WebDriver driver = DriverFactory.getWebDriver()
@@ -93,19 +97,26 @@ public class WebService {
 		Graphics2D graphics = fullImg.createGraphics()
 		graphics.setColor(Color.RED)
 
-		tos.each { to ->
+		listTo.each { to ->
 			WebElement element = WebUI.findWebElement(to, 1)
 			int elementWidth = element.getSize().getWidth()
 			int elementHeight = element.getSize().getHeight()
-			int elementX = element.getLocation().getX()
-			int elementY = element.getLocation().getY()
+			int elementX = WebUI.executeJavaScript('return arguments[0].getBoundingClientRect().left;', Arrays.asList(element))
+			int elementY = WebUI.executeJavaScript('return arguments[0].getBoundingClientRect().top;', Arrays.asList(element))
 			graphics.drawRect(elementX, elementY, elementWidth, elementHeight)
 		}
 		graphics.dispose()
-		
+
 		// Save the screenshot with the highlighted element
-		Date date =  new Date()
-		long epochTime = date.getTime()
-		ImageIO.write(fullImg, "png", new File("${destPath}/${epochTime}_${fileName}.png"))
+		ImageIO.write(fullImg, "png", new File("${destPath}/${GlobalVariable.Current_Test_Case}.png"))
+		GlobalVariable.Evidence_Image[GlobalVariable.Current_Test_Case] = GlobalVariable.Current_Test_Case_Desc
 	}
+
+	//	GET FILE LIST
+	//	Path sourcePath = Paths.get("${GlobalVariable.Path_Test_Report}/Screenshoots")
+	//	Files.list(sourcePath).each { path ->
+	//		String imageName = path.fileName.toString().split("_")[1].replace(".png", "")
+	//		image = new DataReportEvidenceImage(imageName, path.toString())
+	//		field.add(image)
+	//	}
 }

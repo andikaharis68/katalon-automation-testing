@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.2.final using JasperReports Library version 6.21.2-8434a0bd7c3bbc37cbf916f2968d35e4b165821a  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="40" bottomMargin="40" uuid="618519b4-55f6-42ec-8f57-b8164ac326e7">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="coverTesterName" class="java.lang.String"/>
+	<parameter name="coverFeatureName" class="java.lang.String"/>
+	<parameter name="coverProjectName" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="762" splitType="Stretch">
+			<frame>
+				<reportElement x="3" y="185" width="509" height="210" uuid="269590c0-4779-4916-b191-719811ae863c"/>
+				<staticText>
+					<reportElement x="4" y="61" width="499" height="59" uuid="b8306a2f-60c3-4f1d-9de3-dd2c8eb6d01c"/>
+					<textElement textAlignment="Left">
+						<font fontName="Arial Black" size="35" isBold="false"/>
+					</textElement>
+					<text><![CDATA[AUTOMATION]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="3" y="95" width="499" height="54" uuid="e51108c3-9ba1-4b36-b6cf-cd5382561f83"/>
+					<textElement textAlignment="Left">
+						<font fontName="Arial Black" size="36" isBold="false"/>
+					</textElement>
+					<text><![CDATA[REPORT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="144" width="296" height="19" forecolor="#3F3F40" uuid="b1e068e9-d3b4-4c27-94e1-83c230dc3d64"/>
+					<textElement>
+						<font size="14" isItalic="false"/>
+					</textElement>
+					<text><![CDATA[Testing summary report automation]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="4" y="162" width="296" height="29" forecolor="#3F3F40" uuid="775a266a-ab69-4900-a6ca-d1ea91c4fd6b"/>
+					<textElement>
+						<font size="17" isBold="false" isItalic="false"/>
+					</textElement>
+					<text><![CDATA[Support by Katalon Studio]]></text>
+				</staticText>
+			</frame>
+			<rectangle>
+				<reportElement x="-1" y="610" width="515" height="152" forecolor="#329AC7" backcolor="#329AC7" uuid="b9b65c71-e5be-4a4f-9769-2717e6cd169b">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+			</rectangle>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="309" y="727" width="182" height="19" forecolor="#FFFFFF" uuid="a62a8d06-9ca4-4fd7-91e9-24bb6d767c11"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="412" y="622" width="79" height="30" forecolor="#FFFFFF" uuid="b1b05d58-ecd4-446e-b084-5e384a5dc527"/>
+				<textElement textAlignment="Right">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Project]]></text>
+			</staticText>
+			<image>
+				<reportElement x="4" y="667" width="113" height="94" uuid="6f664288-52e3-4524-81f7-1f659231dac5"/>
+				<imageExpression><![CDATA["./Data/katalon_logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="97" y="725" width="122" height="22" forecolor="#FFFFFF" uuid="33c2cd1c-1f84-408a-b290-b608defa7063"/>
+				<textElement textAlignment="Left">
+					<font size="16" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Katalon Studio]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="209" y="645" width="282" height="62" forecolor="#FFFFFF" uuid="54d8513b-4590-4d5f-a184-5954d0480873"/>
+				<textElement textAlignment="Right">
+					<font size="26" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{coverProjectName}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="0" y="1" width="515" height="10" forecolor="#329AC7" backcolor="#329AC7" uuid="f296f764-d951-49d0-891d-695ab0fabcb0"/>
+			</rectangle>
+			<image>
+				<reportElement x="383" y="36" width="129" height="43" uuid="d549d6dd-5b5b-4368-8ef4-d5df3918622e"/>
+				<imageExpression><![CDATA["./Data/mandiri_logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="3" y="42" width="196" height="18" uuid="1f1e44bc-44de-48a8-8bcf-7e0425c55d5c"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[PT Bank Mandiri (Persero) Tbk.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="61" width="196" height="18" uuid="a520ff42-cf35-4ced-8d2a-4fe0c90ffe12"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Dept. Release Management & Testing Services]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="97" y="708" width="100" height="24" forecolor="#FFFFFF" uuid="4672dc47-0f59-4cef-9ef0-ac397c7fc09f"/>
+				<textElement textAlignment="Left">
+					<font size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Tools :]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

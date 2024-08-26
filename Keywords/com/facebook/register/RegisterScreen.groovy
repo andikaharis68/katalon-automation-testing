@@ -49,6 +49,7 @@ public class RegisterScreen extends PageObject {
 	TestObject radMale = createTestObject("radMale", "//span//label[text()= 'Male']")
 	TestObject radCustome = createTestObject("radCustome", "//span//label[text()= 'Custom']")
 	TestObject btnSignUp = createTestObject("btnSignUp", "//button[@type = 'submit' and text() = 'Sign Up']")
+	TestObject btnClose = createTestObject("btnClose", "//img[@class = '_8idr img']")
 
 	public void inputFirstName(String firstName) {
 		WebUI.setText(txfFirstName, firstName)
@@ -73,33 +74,41 @@ public class RegisterScreen extends PageObject {
 		Select select = new Select(dropdown)
 		select.selectByValue(date)
 	}
-	
+
 	public void selectMonth(String month) {
 		WebElement dropdown = WebUI.findWebElement(drpMonth, 0)
 		Select select = new Select(dropdown)
 		select.selectByValue(month)
 	}
-	
+
 	public void selectYear(String year) {
 		WebElement dropdown = WebUI.findWebElement(drpYear, 0)
 		Select select = new Select(dropdown)
 		select.selectByValue(year)
 	}
-	
+
 	public void tapGanderMale() {
 		WebUI.click(radMale)
 	}
-	
+
 	public void inputReEnterEmail(String email) {
 		WebUI.setText(txfReEnterEmail, email)
 	}
-	
+
 	public void tapSingUp() {
 		WebUI.click(btnSignUp)
 	}
 	
+	public void tapClose() {
+		WebUI.click(btnClose)
+	}
+
 	public void reportCreateRegister() {
-		List<TestObject> to = List.of(txfFirstName, txfSurname, txfEmail, txfReEnterEmail, btnSignUp, radMale, drpYear, drpMonth, drpDate, txfNewPassword);
-		WebService.takeReportScreenshot(to, "Create New Register Account")
+		List<TestObject> tos = List.of(txfFirstName, txfSurname, txfEmail, btnSignUp, radMale, drpYear, drpMonth, drpDate, txfNewPassword);
+		WebService.takeReportScreenshot(tos)
+	}
+	
+	public void reportCancelRegister() {
+		WebService.takeReportScreenshot(btnClose)
 	}
 }

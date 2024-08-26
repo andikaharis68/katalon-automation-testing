@@ -4,6 +4,7 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
+import com.company.service.MobileService
 import com.company.services.WebService
 import com.facebook.login.LoginScreen
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
@@ -20,12 +21,5 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebService.openBrowser("https://www.saucedemo.com/v1/inventory.html")
-
-LoginScreen login = new LoginScreen()
-
-login.tapBar()
-
-login.tapAbout()
- 
+MobileService.startAplication()
 
