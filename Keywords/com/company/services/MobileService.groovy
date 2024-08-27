@@ -30,7 +30,7 @@ import internal.GlobalVariable
 import io.appium.java_client.remote.MobileCapabilityType
 
 public class MobileService {
-	
+
 	def static void startApp() {
 		DesiredCapabilities capabilities = new DesiredCapabilities()
 		Mobile.delay(5)
@@ -38,17 +38,10 @@ public class MobileService {
 		capabilities.setCapability(MobileCapabilityType.UDID, MobileDriverFactory.getDeviceId());
 		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, MobileDriverFactory.getDeviceName());
 		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-//		capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, MobileDriverFactory.getDeviceOSVersion());
+		//		capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, MobileDriverFactory.getDeviceOSVersion());
 		capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
 		capabilities.setCapability(MobileCapabilityType.APP, "com.android.chrome");
 		AppiumDriverManager.createMobileDriver(MobileDriverType.ANDROID_DRIVER, capabilities, new URL("http://192.168.18.178:4723"))
 
-//		String os = Mobile.getDeviceOS().toLowerCase()
-//		if (os == "android") {
-//			AppiumDriverManager.createMobileDriver(MobileDriverType.ANDROID_DRIVER, capabilities, new URL("http://192.168.18.178:4723"))
-//		}
-//		else if (os == "ios") {
-//			AppiumDriverManager.createMobileDriver(MobileDriverType.IOS_DRIVER, capabilities, new URL("http://localhost:9000/wd/hub"))
-//		}
 	}
 }
