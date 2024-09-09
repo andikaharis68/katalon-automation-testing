@@ -23,7 +23,7 @@ import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
-import com.mandiri.reports.CreateCustomReport
+import com.mandiri.customreports.CreateCustomReport
 import com.mandiri.supports.TestDataLoader
 import com.mandiri.supports.WebSupport
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile

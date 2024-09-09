@@ -15,12 +15,6 @@ junitreports/
 console.txt
 application.properties
 
-# Specific test suite reports
-Reports/**
-
-# Katalon Plugins
-Plugins/**
-
 # Operating system files
 .DS_Store
 Thumbs.db
