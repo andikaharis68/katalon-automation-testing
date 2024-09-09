@@ -6,6 +6,11 @@
    <defaultProfile>true</defaultProfile>
    <GlobalVariableEntity>
       <description></description>
+      <initValue>'Gmail'</initValue>
+      <name>Project_Name</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
       <initValue>'Andika Haris'</initValue>
       <name>Tester_Name</name>
    </GlobalVariableEntity>
@@ -38,11 +43,6 @@
       <description></description>
       <initValue>[:]</initValue>
       <name>Evidence_Image</name>
-   </GlobalVariableEntity>
-   <GlobalVariableEntity>
-      <description></description>
-      <initValue>'https://www.google.com/intl/en-US/gmail/about/'</initValue>
-      <name>Web_Url_Gmail</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>

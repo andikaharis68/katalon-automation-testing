@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Membuat address gmail baru dengan custom name</description>
+   <name>Create_Own_Gmail_Address</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>1222f1ea-9781-4f87-82c6-3595876e5859</testCaseGuid>
+</TestCaseEntity>
