@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>User klik button create account and select for personal use</description>
+   <name>Select_Create_Account_For_Personal</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>0e51ed05-554a-4698-8a26-36afeaa130d9</testCaseGuid>
+</TestCaseEntity>

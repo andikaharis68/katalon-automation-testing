@@ -1,4 +1,4 @@
-package com.facebook.login
+package com.mandiri.services
 
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
@@ -24,25 +24,5 @@ import org.openqa.selenium.support.FindBy;
 
 import internal.GlobalVariable
 
-public class LoginScreen extends PageObject {
-
-	TestObject btnRegis = createTestObject("btnRegis", "//*[text() = 'Create new account']")
-	TestObject btnSidebar = createTestObject("btnSidebar", "//*[text() = 'Open Menu']")
-	TestObject btnAbout = createTestObject("btnAbout", "//*[text() = 'About']")
-
-	public void tapButtonRegister() {
-		WebUI.click(btnRegis)
-	}
-
-	public void tapBar() {
-		WebUI.click(btnSidebar)
-	}
-
-	public void tapAbout() {
-		WebUI.click(btnAbout)
-	}
-
-	public void takeReportClickButtonLogin() {
-		WebService.takeReportScreenshot(btnRegis)
-	}
+public class MobileServices {
 }

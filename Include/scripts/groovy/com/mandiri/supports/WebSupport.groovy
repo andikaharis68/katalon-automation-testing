@@ -1,4 +1,4 @@
-package com.company.services
+package com.mandiri.supports
 
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
@@ -10,20 +10,12 @@ import java.awt.Color
 import java.awt.Graphics2D
 import java.awt.image.BufferedImage
 import java.nio.file.Files
-import java.nio.file.Path
 import java.nio.file.Paths
-import java.text.SimpleDateFormat
 
 import javax.imageio.ImageIO
 
-import org.bouncycastle.jcajce.provider.asymmetric.util.KeyUtil
-import org.openqa.selenium.OutputType
-import org.openqa.selenium.TakesScreenshot
-import org.openqa.selenium.WebDriver
-import org.openqa.selenium.WebElement
-import org.openqa.selenium.chrome.ChromeDriver
-import org.openqa.selenium.chrome.ChromeOptions
-
+import com.company.pageobject.PageObject
+import com.company.services.WebService
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.configuration.RunConfiguration
@@ -41,38 +33,35 @@ import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
-import internal.GlobalVariable
-import net.sf.jasperreports.chrome.Chrome
+import org.openqa.selenium.OutputType
+import org.openqa.selenium.TakesScreenshot
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
-public class WebService {
+import internal.GlobalVariable
+
+public class WebSupport {
 
 	def static void openBrowser(String url) {
-//		System.setProperty("webdriver.chrome.driver", "C:/Users/ThinkPad T14s/.katalon/packages/Katalon_Studio_Free_Windows_64-9.5.0/Katalon_Studio_Free_Windows_64-9.5.0/configuration/resources/drivers/chromedriver_win32/chromedriver.exe")
-//		String chromeProfilePath = '--user-data-dir=C:\\Users\\ThinkPad T14s\\AppData\\Local\\Google\\Chrome\\User Data'
-////		
-////		// Konfigurasi opsi Chrome untuk menggunakan profil tertentu
-//		ChromeOptions options = new ChromeOptions()
-//		options.addArguments("--user-data-dir=" + chromeProfilePath)
-//		options.addArguments("--profile-directory=Profile 2") // Ganti dengan nama profil yang sesuai
-//		options.addArguments("start-maximized"); // open Browser in maximized mode
-//		options.addArguments("disable-infobars"); // disabling infobars
-//		options.addArguments("--disable-extensions"); // disabling extensions
-//		options.addArguments("--disable-gpu"); // applicable to windows os only
-//		options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-//		options.addArguments("--no-sandbox"); // Bypass OS security model
-//		
-//		// Buka browser dengan profil pengguna
-//		WebDriver driver = new ChromeDriver(options)
-//		DriverFactory.changeWebDriver(driver)
-//		driver.get(url)
 		WebUI.openBrowser("")
 		WebUI.maximizeWindow()
 		WebUI.navigateToUrl(url)
 	}
 
-	def static void takeReportScreenshot(TestObject to) {
+	def static void takeScreenshot() {
+		WebDriver driver = DriverFactory.getWebDriver()
+		File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE)
+
+		// Save the screenshot
 		String destPath = "${GlobalVariable.Path_Test_Report}/Screenshoots"
 		Files.createDirectories(Paths.get(destPath))
+		BufferedImage fullImg = ImageIO.read(screenshot)
+		ImageIO.write(fullImg, "png", new File("${destPath}/${GlobalVariable.Current_Test_Case}.png"))
+		GlobalVariable.Evidence_Image[GlobalVariable.Current_Test_Case] = GlobalVariable.Current_Test_Case_Desc
+	}
+
+	def static void takeScreenshotWithHightlight(TestObject to) {
 		WebDriver driver = DriverFactory.getWebDriver()
 		File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE)
 		BufferedImage fullImg = ImageIO.read(screenshot)
@@ -90,13 +79,13 @@ public class WebService {
 		graphics.dispose()
 
 		// Save the screenshot with the highlighted element
+		String destPath = "${GlobalVariable.Path_Test_Report}/Screenshoots"
+		Files.createDirectories(Paths.get(destPath))
 		ImageIO.write(fullImg, "png", new File("${destPath}/${GlobalVariable.Current_Test_Case}.png"))
 		GlobalVariable.Evidence_Image[GlobalVariable.Current_Test_Case] = GlobalVariable.Current_Test_Case_Desc
 	}
 
-	def static void takeReportScreenshot(List<TestObject> listTo) {
-		String destPath = "${GlobalVariable.Path_Test_Report}/Screenshoots"
-		Files.createDirectories(Paths.get(destPath))
+	def static void takeScreenshotWithHightlight(List<TestObject> listTo) {
 		WebDriver driver = DriverFactory.getWebDriver()
 		File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE)
 		BufferedImage fullImg = ImageIO.read(screenshot)
@@ -114,6 +103,8 @@ public class WebService {
 		graphics.dispose()
 
 		// Save the screenshot with the highlighted element
+		String destPath = "${GlobalVariable.Path_Test_Report}/Screenshoots"
+		Files.createDirectories(Paths.get(destPath))
 		ImageIO.write(fullImg, "png", new File("${destPath}/${GlobalVariable.Current_Test_Case}.png"))
 		GlobalVariable.Evidence_Image[GlobalVariable.Current_Test_Case] = GlobalVariable.Current_Test_Case_Desc
 	}

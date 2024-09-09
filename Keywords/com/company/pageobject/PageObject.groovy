@@ -35,7 +35,7 @@ public class PageObject {
 		testObject.addProperty("resource_id", ConditionType.EQUALS, id)
 		return testObject
 	}
-	
+
 	public TestObject createTestObject(String name, String xpath) {
 		TestObject testObject = new TestObject()
 		testObject.addProperty("xpath", ConditionType.EQUALS, xpath)

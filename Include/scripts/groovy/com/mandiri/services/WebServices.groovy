@@ -1,4 +1,4 @@
-package com.facebook.login
+package com.mandiri.services
 
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
@@ -10,12 +10,16 @@ import com.company.pageobject.PageObject
 import com.company.services.WebService
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
+import com.kms.katalon.core.configuration.RunConfiguration
+import com.kms.katalon.core.context.TestCaseContext
+import com.kms.katalon.core.context.TestSuiteContext
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling
 import com.kms.katalon.core.testcase.TestCase
 import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testobject.TestObject
+import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
@@ -24,25 +28,18 @@ import org.openqa.selenium.support.FindBy;
 
 import internal.GlobalVariable
 
-public class LoginScreen extends PageObject {
-
-	TestObject btnRegis = createTestObject("btnRegis", "//*[text() = 'Create new account']")
-	TestObject btnSidebar = createTestObject("btnSidebar", "//*[text() = 'Open Menu']")
-	TestObject btnAbout = createTestObject("btnAbout", "//*[text() = 'About']")
-
-	public void tapButtonRegister() {
-		WebUI.click(btnRegis)
+public class WebServices {
+	def static void getDataBeforeTestCase(TestCaseContext testCaseContext) {
+		String pathTC = testCaseContext.getTestCaseId()
+		TestCase testCaseName = findTestCase(pathTC)
+		GlobalVariable.Current_Test_Case = testCaseName.getName().replace("_", " ")
+		GlobalVariable.Current_Test_Case_Desc = testCaseName.getDescription()
+		KeywordUtil.logInfo(GlobalVariable.Current_Test_Case_Desc)
 	}
 
-	public void tapBar() {
-		WebUI.click(btnSidebar)
-	}
-
-	public void tapAbout() {
-		WebUI.click(btnAbout)
-	}
-
-	public void takeReportClickButtonLogin() {
-		WebService.takeReportScreenshot(btnRegis)
-	}
+	def static void getDataBeforeTestSuites(TestSuiteContext testSuiteContext) {
+		KeywordUtil.logInfo(testSuiteContext.getTestSuiteId())
+		GlobalVariable.Current_Test_Suites = testSuiteContext.getTestSuiteId().split("/")[1]
+		GlobalVariable.Path_Test_Report = RunConfiguration.getReportFolder()
+	}	
 }

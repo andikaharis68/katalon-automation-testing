@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DataFileEntity>
    <description></description>
-   <name>New Test Data</name>
+   <name>MasterData</name>
    <tag></tag>
    <connectionProperties/>
    <containsHeaders>true</containsHeaders>
    <csvSeperator></csvSeperator>
-   <dataFileGUID>60dcb1ac-4f20-4dd4-8293-3013b6e67471</dataFileGUID>
+   <dataFileGUID>d5285ca2-498d-483e-add1-e98199fedc4d</dataFileGUID>
    <dataSourceUrl></dataSourceUrl>
-   <driver>InternalData</driver>
-   <data>null</data>
-   <internalDataColumns>
-      <columnIndex>0</columnIndex>
-      <name>Name</name>
-      <size>1</size>
-   </internalDataColumns>
+   <driver>ExcelFile</driver>
    <isInternalPath>false</isInternalPath>
    <query></query>
    <secureUserAccount>false</secureUserAccount>

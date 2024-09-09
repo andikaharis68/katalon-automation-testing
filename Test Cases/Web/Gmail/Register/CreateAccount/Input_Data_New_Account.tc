@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Input new data first name and last name</description>
+   <name>Input_Data_New_Account</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>b10b5a83-ed6b-43c8-b70b-46755cb2c4da</testCaseGuid>
+</TestCaseEntity>

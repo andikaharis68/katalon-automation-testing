@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Memasukan data basic information dan click button next</description>
+   <name>Input_Data_Basic_Information</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>745d331f-8c6b-406e-8fc6-ca12a1110ff2</testCaseGuid>
+</TestCaseEntity>

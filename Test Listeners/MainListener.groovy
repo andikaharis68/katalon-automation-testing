@@ -13,8 +13,6 @@ import java.time.format.DateTimeFormatter
 
 import org.eclipse.core.runtime.NullProgressMonitor
 
-import com.company.reports.CreateCustomReport
-import com.company.reports.DataReportTestCase
 import com.company.services.WebService
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.configuration.RunConfiguration
@@ -25,6 +23,9 @@ import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import com.mandiri.reports.CreateCustomReport
+import com.mandiri.supports.TestDataLoader
+import com.mandiri.supports.WebSupport
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 
 import internal.GlobalVariable as GlobalVariable
@@ -47,7 +48,9 @@ class MainListener {
 	 */
 	@BeforeTestCase
 	def sampleBeforeTestCase(TestCaseContext testCaseContext) {
-		WebService.getDataBeforeTestCase(testCaseContext)
+		TestCase testCase = findTestCase(testCaseContext.getTestCaseId())
+		GlobalVariable.Current_Test_Case = testCase.getName().replace("_", " ")
+		GlobalVariable.Current_Test_Case_Desc = testCase.getDescription()
 	}
 
 	/**
@@ -66,7 +69,8 @@ class MainListener {
 	 */
 	@BeforeTestSuite
 	def sampleBeforeTestSuite(TestSuiteContext testSuiteContext) {
-		WebService.getDataBeforeTestSuites(testSuiteContext)
+		GlobalVariable.Current_Test_Suites = testSuiteContext.getTestSuiteId().split("/")[-1]
+		GlobalVariable.Path_Test_Report = RunConfiguration.getReportFolder()
 		WebService.openBrowser(GlobalVariable.Web_Url)
 	}
 

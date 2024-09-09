@@ -11,7 +11,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'www.facebook.com'</initValue>
+      <initValue>'https://www.google.com/intl/en-US/gmail/about/'</initValue>
       <name>Web_Url</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -41,7 +41,12 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'https://kb-fmf.atlassian.net/browse/LDL-1161'</initValue>
+      <initValue>'https://www.google.com/intl/en-US/gmail/about/'</initValue>
       <name>Web_Url_Gmail</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>[:]</initValue>
+      <name>Test_Data</name>
    </GlobalVariableEntity>
 </GlobalVariableEntities>

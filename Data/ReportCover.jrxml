@@ -45,13 +45,13 @@
 					</textElement>
 					<text><![CDATA[Testing summary report automation]]></text>
 				</staticText>
-				<staticText>
-					<reportElement x="4" y="162" width="296" height="29" forecolor="#3F3F40" uuid="775a266a-ab69-4900-a6ca-d1ea91c4fd6b"/>
+				<textField>
+					<reportElement x="4" y="164" width="296" height="30" uuid="c68f64c5-1305-47fa-9d3b-597dbc2f0389"/>
 					<textElement>
-						<font size="17" isBold="false" isItalic="false"/>
+						<font size="16"/>
 					</textElement>
-					<text><![CDATA[Support by Katalon Studio]]></text>
-				</staticText>
+					<textFieldExpression><![CDATA["Report by " + $P{coverTesterName}]]></textFieldExpression>
+				</textField>
 			</frame>
 			<rectangle>
 				<reportElement x="-1" y="610" width="515" height="152" forecolor="#329AC7" backcolor="#329AC7" uuid="b9b65c71-e5be-4a4f-9769-2717e6cd169b">
@@ -59,7 +59,7 @@
 				</reportElement>
 			</rectangle>
 			<textField pattern="EEEEE dd MMMMM yyyy">
-				<reportElement x="309" y="727" width="182" height="19" forecolor="#FFFFFF" uuid="a62a8d06-9ca4-4fd7-91e9-24bb6d767c11"/>
+				<reportElement x="309" y="729" width="182" height="19" forecolor="#FFFFFF" uuid="a62a8d06-9ca4-4fd7-91e9-24bb6d767c11"/>
 				<textElement textAlignment="Right">
 					<font size="12" isBold="true"/>
 				</textElement>
