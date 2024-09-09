@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "C49E16A3A3F1472980B3F310E1D6EE30",
+  "keywordClasses": [
+    {
+      "name": "com.company.services.MobileService",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": true
+}

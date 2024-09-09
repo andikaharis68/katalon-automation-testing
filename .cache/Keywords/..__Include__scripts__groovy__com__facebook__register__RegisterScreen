@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "0239264E501D51C9C30DC3532447109D",
+  "keywordClasses": [
+    {
+      "name": "com.facebook.register.RegisterScreen",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": true
+}

@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "B2369B3E8FD0156EA382E8A9369124EA",
+  "keywordClasses": [
+    {
+      "name": "com.company.services.MobileHelpers",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": true
+}

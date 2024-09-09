@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "78848C8FB4FED81FD30DA680DE4CB9B6",
+  "keywordClasses": [
+    {
+      "name": "com.company.reports.DataReportTestCase",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": true
+}

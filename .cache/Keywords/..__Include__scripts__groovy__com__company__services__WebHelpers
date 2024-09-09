@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "555854CB3BD9FB5A07D35737B2F95FFF",
+  "keywordClasses": [
+    {
+      "name": "com.company.services.WebHelpers",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": true
+}

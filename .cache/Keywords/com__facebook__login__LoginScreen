@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "D976BFFBA90370A61BBEADE06AA75FD5",
+  "keywordClasses": [
+    {
+      "name": "com.facebook.login.LoginScreen",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": true
+}

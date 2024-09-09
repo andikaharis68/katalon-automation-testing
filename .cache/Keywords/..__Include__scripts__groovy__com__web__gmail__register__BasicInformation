@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "17F905A543A7CB8FE1D63DB21CD5F05E",
+  "keywordClasses": [
+    {
+      "name": "com.web.gmail.register.BasicInformation",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": true
+}

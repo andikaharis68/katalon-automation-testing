@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "8E89AD8CE81C3B40EC9D748DEAB4CF2B",
+  "keywordClasses": [
+    {
+      "name": "com.company.reports.CreateCustomReport",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": true
+}

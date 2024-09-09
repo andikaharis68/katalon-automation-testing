@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "B92050CD3FFD1FC0B0E3E810F708F0B5",
+  "keywordClasses": [
+    {
+      "name": "com.company.services.DataReport",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": true
+}

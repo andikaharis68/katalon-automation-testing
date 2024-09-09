@@ -1,44 +1,41 @@
-/bin/
-/Libs/
-/.settings/
-/.classpath
-.svn/
-/Reports
-/.project
-/.gradle/
-.cache/
-ci-samples.zip
-settings/internal/
-settings/external/
-Summary Report/*.pdf
-.gradle
-bin
-Reports
-Libs
-build
+# Katalon Studio specific files and folders
 .classpath
 .project
-appium.log
-.log
-*.xdsl
-*.log
-*~*.xlsx
-*.DS_Store
-*.jar
-*.zip
-*.html
-*.png
-*.mov
-*.avi
-*.mp4
-*.xlsx
-*.db
-object_print.txt
-*.xlsx
-*.numbers
-*.prj
-*.apk
-*.ipa
-/Data Files/tessdata
-Data Files/SIT/.~lock.*
+.settings/
+bin/
+Libs/
+build/
+Reports/
+Drivers/
+.temporary/
+lib/
+tmp/
+logs/
+junitreports/
+console.txt
+application.properties
 
+# Specific test suite reports
+Reports/**
+
+# Katalon Plugins
+Plugins/**
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDE specific files (e.g., IntelliJ IDEA)
+.idea/
+*.iml
+.vscode/
+
+# Miscellaneous
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*.patch
+*.orig
+*.rej

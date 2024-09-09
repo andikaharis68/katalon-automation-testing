@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "2B771BE6F750061E5E0B2E41C70E3A07",
+  "keywordClasses": [
+    {
+      "name": "com.company.services.WebService",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": false
+}

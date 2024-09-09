@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "90861D6798676E3866DAE4B891E49726",
+  "keywordClasses": [
+    {
+      "name": "com.company.services.Helper",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": true
+}

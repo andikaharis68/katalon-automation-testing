@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "C6D2C482DDE5DA8B83CCE2A8E0E934CD",
+  "keywordClasses": [
+    {
+      "name": "com.web.gmail.register.ChooseGmailAddress",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": false
+}

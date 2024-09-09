@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "7DAEFF2899C4A01033C876B212E6E9F5",
+  "keywordClasses": [
+    {
+      "name": "com.company.pageobject.Helper",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": true
+}
