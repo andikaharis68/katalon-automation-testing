@@ -1,10 +1,10 @@
 {
-  "keywordFileContentHash": "50057B164250A4B0E6AD45AB0D6952A1",
+  "keywordFileContentHash": "A23E4AF5CCB5EB07B6312D2B35C28617",
   "keywordClasses": [
     {
       "name": "com.mandiri.supports.WebSupport",
       "keywordMethods": []
     }
   ],
-  "javadocParsed": false
+  "javadocParsed": true
 }

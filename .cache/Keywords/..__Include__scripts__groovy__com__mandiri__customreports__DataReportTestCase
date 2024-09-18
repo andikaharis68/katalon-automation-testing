@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "827F24055A63E2491F3FAE3BBA36AB44",
+  "keywordClasses": [
+    {
+      "name": "com.mandiri.customreports.DataReportTestCase",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": true
+}

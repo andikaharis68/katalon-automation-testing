@@ -21,7 +21,6 @@ import com.mandiri.pageobject.WebPageObject
 import com.mandiri.services.WebServices
 import com.mandiri.supports.WebSupport
 
-import static org.assertj.core.api.InstanceOfAssertFactories.LIST
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

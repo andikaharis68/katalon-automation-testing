@@ -1,0 +1,10 @@
+{
+  "keywordFileContentHash": "C2EDA2FCCC9DEA84E1B6CB3149102799",
+  "keywordClasses": [
+    {
+      "name": "com.mandiri.customreports.CreateCustomReport",
+      "keywordMethods": []
+    }
+  ],
+  "javadocParsed": true
+}
